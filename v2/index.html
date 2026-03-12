@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>电梯百科展示网站 V2 - 筛选与详情</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body class="selection:bg-amber-500/30">
+  <header class="hero-bg py-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <p class="text-xs font-bold uppercase tracking-[0.3em] text-amber-500/80">Elevator Encyclopedia · V2</p>
+      <h1 class="mt-4 text-4xl font-light tracking-tight text-white sm:text-5xl">
+        电梯百科<span class="font-bold text-amber-500">交互版</span>
+      </h1>
+      <div class="mt-6 h-1 w-12 bg-amber-500"></div>
+      <p class="mt-8 max-w-2xl text-lg leading-relaxed text-slate-400">
+        从 <code>data/elevators.json</code> 加载数据，支持国家 / 品牌 / 类型筛选与详情弹窗。
+      </p>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-5xl px-6 py-12">
+    <section aria-label="筛选器" class="mb-10">
+      <div class="panel grid grid-cols-1 gap-4 rounded-sm border border-white/5 p-4 md:grid-cols-4">
+        <label class="space-y-2">
+          <span class="text-xs uppercase tracking-widest text-slate-500">国家</span>
+          <select id="countryFilter" class="filter-select"></select>
+        </label>
+        <label class="space-y-2">
+          <span class="text-xs uppercase tracking-widest text-slate-500">品牌</span>
+          <select id="brandFilter" class="filter-select"></select>
+        </label>
+        <label class="space-y-2">
+          <span class="text-xs uppercase tracking-widest text-slate-500">类型</span>
+          <select id="typeFilter" class="filter-select"></select>
+        </label>
+        <div class="flex items-end">
+          <button id="resetBtn" type="button" class="reset-btn w-full">清空筛选</button>
+        </div>
+      </div>
+      <p id="statusText" class="mt-4 text-sm text-slate-400" aria-live="polite"></p>
+      <p id="loadError" class="mt-2 hidden text-sm text-amber-400" aria-live="polite"></p>
+    </section>
+
+    <section aria-label="电梯卡片列表">
+      <div class="mb-8 flex items-end justify-between border-b border-white/5 pb-4">
+        <h2 class="text-xl font-medium tracking-wide text-white">模型列表</h2>
+        <span id="countBadge" class="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-mono text-amber-500/80">COUNT:
+          0</span>
+      </div>
+      <div id="cardsGrid" class="grid grid-cols-1 gap-8 md:grid-cols-2"></div>
+      <div id="emptyState"
+        class="hidden rounded-sm border border-amber-500/20 bg-amber-500/5 p-6 text-center text-sm text-amber-200">
+        无匹配结果，请调整筛选条件或点击“清空筛选”。
+      </div>
+    </section>
+  </main>
+
+  <div id="modalBackdrop" class="modal-backdrop hidden" aria-hidden="true">
+    <div id="modalPanel" class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="flex items-start justify-between gap-6">
+        <div>
+          <p id="modalMeta" class="text-[11px] uppercase tracking-widest text-slate-500"></p>
+          <h3 id="modalTitle" class="mt-2 text-2xl font-light text-white"></h3>
+        </div>
+        <button id="closeModalBtn" type="button" class="reset-btn min-w-20">关闭</button>
+      </div>
+      <p id="modalDesc" class="mt-6 text-sm leading-relaxed text-slate-300"></p>
+      <ul id="modalSpecs" class="mt-6 space-y-3 text-sm text-slate-400"></ul>
+    </div>
+  </div>
+
+  <footer class="py-16 text-center">
+    <p class="text-[10px] uppercase tracking-[0.4em] text-slate-600">Stop at Floor 2 · 2026</p>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>

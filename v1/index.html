@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>电梯百科展示网站 V1 - 工业风格版</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body class="selection:bg-amber-500/30">
+
+  <!-- 【页头】：收拢布局，建立品牌基调 -->
+  <header class="hero-bg py-20">
+    <div class="mx-auto max-w-4xl px-6">
+      <p class="text-xs font-bold uppercase tracking-[0.3em] text-amber-500/80">Elevator Encyclopedia · V1</p>
+      <h1 class="mt-4 text-4xl font-light tracking-tight text-white sm:text-5xl">
+        电梯百科<span class="font-bold text-amber-500">展示</span>
+      </h1>
+      <div class="mt-6 h-1 w-12 bg-amber-500"></div>
+      <p class="mt-8 max-w-xl text-lg leading-relaxed text-slate-400">
+        面向普通好奇用户的电梯卡片展示页（静态版）。当前展示全部 12 条 Demo 数据，便于快速对比国家、品牌、类型与基础参数。
+      </p>
+    </div>
+  </header>
+
+  <!-- 【主展示区】：网格限制为 2 列以维持“垂直井道感” -->
+  <main class="mx-auto max-w-4xl px-6 py-16">
+    <section aria-label="电梯卡片列表">
+      <div class="mb-12 flex items-end justify-between border-b border-white/5 pb-4">
+        <h2 class="text-xl font-medium tracking-wide text-white">模型列表</h2>
+        <span class="rounded-full bg-amber-500/10 px-3 py-1 text-xs font-mono text-amber-500/60">COUNT: 12</span>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <!-- 卡片 1: NEXIEZ-MRL -->
+        <article class="card">
+          <div class="card-image"><span>JP / MITSUBISHI</span></div>
+          <div class="p-8">
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">日本 / 三菱电机</p>
+            <h3 class="mt-2 text-2xl font-light text-white">NEXIEZ-MRL</h3>
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span
+                  class="text-white">商用梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">1350
+                  kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">5.0
+                  m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">日本 (JP)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 卡片 2: ELENESSA -->
+        <article class="card">
+          <div class="card-image"><span>JP / MITSUBISHI</span></div>
+          <div class="p-8">
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">日本 / 三菱电机</p>
+            <h3 class="mt-2 text-2xl font-light text-white">ELENESSA</h3>
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span
+                  class="text-white">住宅梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">450
+                  kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">1.0
+                  m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">日本 (JP)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 卡片 3: Gen2 MR -->
+        <article class="card">
+          <div class="card-image"><span>US / OTIS</span></div>
+          <div class="p-8">
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">美国 / 奥的斯</p>
+            <h3 class="mt-2 text-2xl font-light text-white">Gen2 MR</h3>
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span
+                  class="text-white">住宅梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">630
+                  kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">1.75
+                  m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">美国 (US)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 卡片 4: SKYscape -->
+        <article class="card">
+          <div class="card-image"><span>US / OTIS</span></div>
+          <div class="p-8">
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">美国 / 奥的斯</p>
+            <h3 class="mt-2 text-2xl font-light text-white">SKYscape</h3>
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span
+                  class="text-white">观光梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">1000
+                  kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">4.0
+                  m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">美国 (US)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 卡片 5: TWIN -->
+        <article class="card">
+          <div class="card-image"><span>DE / TK</span></div>
+          <div class="p-8">
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">德国 / 蒂森克虏伯</p>
+            <h3 class="mt-2 text-2xl font-light text-white">TWIN</h3>
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span
+                  class="text-white">商用梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">1600
+                  kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">8.0
+                  m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">德国 (DE)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 卡片 6: Micro -->
+        <article class="card">
+          <div class="card-image"><span>DE / TK</span></div>
+          <div class="p-8">
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">德国 / 蒂森克虏伯</p>
+            <h3 class="mt-2 text-2xl font-light text-white">Micro</h3>
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span
+                  class="text-white">住宅梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">300
+                  kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">0.15
+                  m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">德国 (DE)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 卡片 7: MonoSpace 700 -->
+        <article class="card">
+          <div class="card-image"><span>FI / KONE</span></div>
+          <div class="p-8">
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">芬兰 / 通力</p>
+            <h3 class="mt-2 text-2xl font-light text-white">MonoSpace 700</h3>
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span
+                  class="text-white">商用梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">1000
+                  kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">3.0
+                  m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">芬兰 (FI)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 卡片 8: UltraRope -->
+        <article class="card">
+          <div class="card-image"><span>FI / KONE</span></div>
+          <div class="p-8">
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">芬兰 / 通力</p>
+            <h3 class="mt-2 text-2xl font-light text-white">UltraRope</h3>
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span
+                  class="text-white">观光梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">800
+                  kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">10.0
+                  m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">芬兰 (FI)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 卡片 9: NX-200V -->
+        <article class="card">
+          <div class="card-image"><span>CN / MITSUBISHI</span></div>
+          <div class="p-8">
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">中国 / 三菱电机</p>
+            <h3 class="mt-2 text-2xl font-light text-white">NX-200V</h3>
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span
+                  class="text-white">商用梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">1000
+                  kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">2.5
+                  m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">中国 (CN)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 卡片 10: GeN360 Cargo -->
+        <article class="card">
+          <div class="card-image"><span>CN / OTIS</span></div>
+          <div class="p-8">
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">中国 / 奥的斯</p>
+            <h3 class="mt-2 text-2xl font-light text-white">GeN360 Cargo</h3>
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span
+                  class="text-white">货梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">5000
+                  kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">0.5
+                  m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">中国 (CN)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 卡片 11: 5500 AT -->
+        <article class="card">
+          <div class="card-image"><span>DE / SCHINDLER</span></div>
+          <div class="p-8">
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">德国 / 迅达</p>
+            <h3 class="mt-2 text-2xl font-light text-white">5500 AT</h3>
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span
+                  class="text-white">货梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">3200
+                  kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">0.63
+                  m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">德国 (DE)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 卡片 12: 3300 AP -->
+        <article class="card">
+          <div class="card-image"><span>US / SCHINDLER</span></div>
+          <div class="p-8">
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">美国 / 迅达</p>
+            <h3 class="mt-2 text-2xl font-light text-white">3300 AP</h3>
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span
+                  class="text-white">住宅梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">675
+                  kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">1.6
+                  m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">美国 (US)</span></li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-20 text-center">
+    <p class="text-[10px] uppercase tracking-[0.4em] text-slate-600">Stop at Floor 0 · 2024</p>
+  </footer>
+</body>
+
+</html>

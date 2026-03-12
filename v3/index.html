@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>电梯百科展示网站 V3 - React + TypeScript</title>
+  </head>
+  <body>
+    <div id="root">
+      <main
+        style="
+          min-height: 100vh;
+          display: grid;
+          place-items: center;
+          margin: 0;
+          padding: 24px;
+          background: #1a1c1e;
+          color: #e5e7eb;
+          font-family: Inter, system-ui, sans-serif;
+        "
+      >
+        <section style="max-width: 680px; line-height: 1.8">
+          <h1 style="margin: 0 0 12px; font-size: 28px">V3 需要先构建或启动本地服务</h1>
+          <p style="margin: 0 0 8px">
+            当前文件是 React + TypeScript 源码入口，不能像 `v1`、`v2` 那样直接双击 `index.html` 运行。
+          </p>
+          <p style="margin: 0 0 8px">开发模式：在 `v3` 目录执行 `npm install` 后再运行 `npm run dev`。</p>
+          <p style="margin: 0">静态打开：先执行 `npm run build`，再打开 `v3/dist/index.html`。</p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+  </html>
+
+

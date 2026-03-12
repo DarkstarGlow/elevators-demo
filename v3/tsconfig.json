@@ -1,0 +1,13 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}
+//这是 TypeScript的配置文件。它规定了哪些代码写法是“合法的”，哪些是“违规的”。
+//也就是引用外部文件的路径。

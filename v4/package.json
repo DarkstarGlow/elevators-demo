@@ -1,0 +1,24 @@
+{
+  "name": "elevator-encyclopedia-v4",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('.next',{ recursive: true, force: true })\"",
+    "predev": "npm run clean",
+    "prebuild": "npm run clean",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "typescript": "^5.9.3"
+  }
+}

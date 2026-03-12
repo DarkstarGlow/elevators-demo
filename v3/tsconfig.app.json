@@ -1,0 +1,4 @@
+{
+  "extends": "C:/frontend-stack/typescript/react-app.json",
+  "include": ["src"]
+}

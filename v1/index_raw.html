@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" /> <!-- 功能：字符编码 | 效果：防止中文字符出现乱码 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- 功能：视口设置 | 效果：确保手机端不会缩放变形 -->
+  <title>电梯百科展示网站 V1 - 样式复原版</title>
+  <!-- 引入样式引擎，虽然是 raw 版本，但我们也要注入灵魂类名 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入自定义 CSS 处理核心“氛围感” -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="selection:bg-amber-500/30">
+  
+  <!-- Header: 风格收拢的核心 -->
+  <header class="hero-bg py-20">
+    <!-- max-w-4xl: 强制限制宽度 | 效果：视野被收缩，模拟进入狭窄的电梯井感 -->
+    <div class="mx-auto max-w-4xl px-6">
+      <!-- tracking-[0.3em]: 拉大字间距 | 效果：提升高级感，显得极其工业、干练 -->
+      <p class="text-xs font-bold uppercase tracking-[0.3em] text-amber-500/80">Elevator Encyclopedia · V1</p>
+      
+      <!-- font-light: 细体字 | 效果：呈现现代审美下的极简金属质感 -->
+      <h1 class="mt-4 text-4xl font-light tracking-tight text-white sm:text-5xl">
+        电梯百科<span class="font-bold text-amber-500">展示</span>
+      </h1>
+      
+      <!-- 琥珀装饰线: 效果：模拟控制面板的指示灯条 -->
+      <div class="mt-6 h-1 w-12 bg-amber-500"></div> 
+      
+      <p class="mt-8 max-w-xl text-lg leading-relaxed text-slate-400">
+        面向普通好奇用户的电梯卡片展示页（静态版）。
+      </p>
+    </div>
+  </header>
+
+  <!-- Main: 垂直堆叠区 -->
+  <main class="mx-auto max-w-4xl px-6 py-16">
+    <section>
+      <!-- justify-between: 左右两端对齐 | 效果：实现标题靠左、统计数据靠右的平衡布局 -->
+      <div class="mb-12 flex items-end justify-between border-b border-white/5 pb-4">
+        <h2 class="text-xl font-medium tracking-wide text-white">模型列表</h2>
+        <!-- font-mono: 等宽字 | 效果：模拟机械仪表的数字读数 -->
+        <span class="text-xs font-mono text-amber-500/50">DATA_COUNT: 2 (Demo)</span>
+      </div>
+
+      <!-- grid: 大屏也只保留 2 列，增强“垂直、窄长”的井道感 -->
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <!-- article.card: 独立模型单元 -->
+        <article class="card">
+          <!-- 顶部琥珀色装饰条 -->
+          <div class="card-image"><span>JP / MITSUBISHI</span></div>
+          <div class="p-8">
+            <!-- text-[10px]: 极致小字 | 效果：类似产品说明书的微缩印刷感 -->
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">日本 / 三菱电机</p>
+            <h3 class="mt-2 text-2xl font-light text-white">NEXIEZ-MRL</h3>
+            <!-- flex justify-between: 数据两端对齐 | 效果：报表般的规整感 -->
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span class="text-white">商用梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">1350 kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">5.0 m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">日本 (JP)</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image"><span>JP / MITSUBISHI</span></div>
+          <div class="p-8">
+            <p class="text-[10px] uppercase tracking-widest text-slate-500">日本 / 三菱电机</p>
+            <h3 class="mt-2 text-2xl font-light text-white">ELENESSA</h3>
+            <ul class="mt-8 space-y-3 text-sm text-slate-400">
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>类型</span><span class="text-white">住宅梯</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>限载</span><span class="text-white">450 kg</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>速度</span><span class="text-white">1.0 m/s</span></li>
+              <li class="flex justify-between"><span>产地国</span><span class="text-white">日本 (JP)</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

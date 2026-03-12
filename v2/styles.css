@@ -1,0 +1,170 @@
+/* ============================================================
+   【电梯百科 V1 - 工业美学核心样式库】
+   设计核心：利用 CSS 模拟物理质感（金属、光影、重力感）
+   ============================================================ */
+
+:root {
+  /* 定义全局变量：方便一键管理全站色调 */
+  --metallic-gray: #2d3136;   /* 功能：基础金属冷灰 | 效果：建立工业、硬朗的基调 */
+  --elevator-amber: #f59e0b; /* 功能：琥珀色灯光 | 效果：模拟电梯楼层显示的温暖感，作为视觉重心 */
+  --bg-deep: #1a1c1e;        /* 功能：深邃背景色 | 效果：模拟深邃的井道，让内容从黑暗中“浮”出来 */
+}
+
+body {
+  margin: 0;                 /* 功能：清除浏览器默认外边距 | 效果：确保背景颜色铺满全屏 */
+  padding: 0;                /* 功能：清除默认内边距 | 效果：防止布局出现意外空白 */
+  background-color: var(--bg-deep); /* 功能：应用深灰色背景 | 效果：奠定“深邃、沉静”的视觉底色 */
+  color: #e2e2e2;            /* 功能：应用微暖白文字 | 效果：降低对比度，长时间阅读不累眼 */
+  font-family: 'Inter', system-ui, sans-serif; /* 功能：指定无衬线字体 | 效果：呈现现代、干练的工业感 */
+  overflow-x: hidden;        /* 功能：禁止水平滚动 | 效果：防止动画执行时产生意外的横向晃动 */
+}
+
+/* 
+   【暗角滤镜：视野收拢】
+   body::before 创建一个覆盖全屏的“伪元素”
+*/
+body::before {
+  content: "";               /* 功能：必须属性，用于生成元素内容 | 效果：在页面最上层生成一个透明层 */
+  position: fixed;           /* 功能：固定定位 | 效果：无论页面怎么滚动，暗角效果始终贴在屏幕上 */
+  top: 0; left: 0;           /* 功能：对齐左上角 | 效果：确保覆盖范围从坐标零点开始 */
+  width: 100%; height: 100%; /* 功能：宽高 100% | 效果：全屏覆盖 */
+  /* 功能：径向渐变 | 效果：中心 40% 透明，边缘渐变为 50% 黑色，模拟“电梯门关闭”时的视觉收缩感 */
+  background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.5) 100%);
+  pointer-events: none;      /* 功能：穿透点击 | 效果：装饰层不影响用户点击下方的按钮和链接 */
+  z-index: 10;               /* 功能：高层级 | 效果：确保暗角压在所有内容之上，形成电影感滤镜 */
+}
+
+/* 
+   【页头质感：金属拉丝】
+*/
+.hero-bg {
+  /* 功能：双重背景混合 */
+  background: 
+    /* 效果层 A：135度线性渐变，模拟光线从左上方打在金属板上的立体感 */
+    linear-gradient(135deg, rgba(45, 49, 54, 0.95) 0%, rgba(26, 28, 30, 0.98) 100%),
+    /* 效果层 B：重复线性渐变，间距 10px 的极细斜纹 | 效果：模拟不锈钢表面的拉丝纹理 */
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 10px);
+  /* 功能：底边框 | 效果：用微弱的琥珀光勾勒页头边界，增加层次感 */
+  border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* 
+   【卡片逻辑：磁悬浮与入场节奏】
+*/
+.card {
+  background: #24272a;       /* 功能：卡片底色 | 效果：比背景略亮，使内容块具备“实体感” */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* 功能：细微边框 | 效果：定义硬朗的边缘 */
+  border-radius: 2px;        /* 功能：极小圆角 | 效果：拒绝圆润，强调机械般的工业硬度 */
+  overflow: hidden;          /* 功能：隐藏溢出 | 效果：确保内部装饰条不超出卡片边界 */
+  /* 功能：过渡属性 | 效果：让悬停时的变化具备 0.4 秒的丝滑感 */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* 功能：阴影 | 效果：让卡片从平面中“浮”起来 */
+  
+  /* 入场动画初始状态 */
+  opacity: 0;                /* 功能：透明度为 0 | 效果：初始不可见 */
+  transform: translateY(20px); /* 功能：下移 20 像素 | 效果：为后续的上浮动画预留空间 */
+  animation: slideUp 0.6s forwards; /* 功能：执行动画 | 效果：模拟物体平稳上升的过程 */
+}
+
+/* 悬停反馈：模拟指示灯亮起 */
+.card:hover {
+  border-color: var(--elevator-amber); /* 功能：边框变琥珀色 | 效果：模拟指示灯亮起，提示“已选中” */
+  transform: translateY(-2px);         /* 功能：微弱上升 | 效果：增加交互的物理反馈感 */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* 功能：加深阴影 | 效果：视觉上离用户更近 */
+}
+
+/* 装饰条：模拟电梯门缝 */
+.card-image {
+  height: 6px;               /* 功能：极窄高度 | 效果：作为点缀，不抢夺文字内容的注意力 */
+  background: var(--elevator-amber); /* 功能：核心琥珀色 | 效果：贯穿全站的设计语言 */
+  position: relative;        /* 功能：开启定位 | 效果：允许内部的文字以它为基准进行绝对定位 */
+}
+
+/* 动画定义 */
+@keyframes slideUp {
+  to {
+    opacity: 1;              /* 功能：变为完全可见 */
+    transform: translateY(0);/* 功能：回到原始位置 | 效果：形成“电梯停靠在当前层”的平稳感 */
+  }
+}
+
+/* 【节奏设计】：依次给前三张卡片增加延迟 */
+.card:nth-child(1) { animation-delay: 0.1s; } /* 效果：第一张先到 */
+.card:nth-child(2) { animation-delay: 0.2s; } /* 效果：第二张紧随其后 */
+.card:nth-child(3) { animation-delay: 0.3s; } /* 效果：第三张收尾，形成连贯的流动感 */
+
+.panel {
+  background: rgba(36, 39, 42, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.filter-select {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #1f2124;
+  color: #e5e7eb;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.filter-select:focus {
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.3);
+}
+
+.reset-btn {
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+  background: rgba(245, 158, 11, 0.08);
+  padding: 0.55rem 0.9rem;
+  font-size: 0.875rem;
+  transition: all 0.25s ease;
+}
+
+.reset-btn:hover,
+.reset-btn:focus {
+  background: rgba(245, 158, 11, 0.16);
+  border-color: rgba(245, 158, 11, 0.6);
+}
+
+.card {
+  cursor: pointer;
+}
+
+.card-image {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0.75rem;
+}
+
+.card-image span {
+  color: rgba(15, 15, 15, 0.75);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-panel {
+  width: min(680px, 100%);
+  background: #202326;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  padding: 1.25rem;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
