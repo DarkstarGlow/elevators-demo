@@ -32,17 +32,31 @@
 └── README.md
 ```
 
-## 本地运行
+## 如何本地打开
 
 ### V1
 
-直接打开 `v1/index.html`。
+直接双击打开 `v1/index.html` 即可。
 
 ### V2
 
-建议用本地服务器启动后访问 `v2/index.html`，因为它会读取 `data/elevators.json`。
+`V2` 会读取 `data/elevators.json`，所以不要直接双击 HTML，最好用本地服务器启动。
+
+在项目根目录运行：
+
+```bash
+python -m http.server 8000
+```
+
+然后在浏览器访问：
+
+```text
+http://localhost:8000/v2/index.html
+```
 
 ### V3
+
+`V3` 使用 React + Vite，需要先安装 Node.js。
 
 ```bash
 cd v3
@@ -50,7 +64,13 @@ npm install
 npm run dev
 ```
 
-构建预览：
+默认会输出一个本地地址，通常是：
+
+```text
+http://localhost:5173
+```
+
+如果只想看构建结果：
 
 ```bash
 cd v3
@@ -59,13 +79,21 @@ npm run build
 
 ### V4
 
+`V4` 使用 Next.js，也需要先安装 Node.js。
+
 ```bash
 cd v4
 npm install
 npm run dev
 ```
 
-生产模式预览：
+默认本地地址通常是：
+
+```text
+http://localhost:3000
+```
+
+如果想按生产模式运行：
 
 ```bash
 cd v4
@@ -84,4 +112,4 @@ npm run start
 
 - `node_modules`、`.next`、`dist` 这类构建产物不应上传
 - `v3` 和 `v4` 都需要先安装依赖再运行
-- 如果你要给别人在线预览，最省事的是单独部署 `v1`、`v2` 或把 `v3` 构建后部署到静态托管平台
+- 如果你要给别人在线预览，最省事的是单独部署 `v1`、`v2` 或把 `v4` 部署到 Vercel
